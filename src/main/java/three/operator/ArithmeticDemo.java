@@ -22,11 +22,11 @@ public class ArithmeticDemo {
         System.out.println("Vaš rezultat je: " + suma);
         int razlika = number1 - number2;
         System.out.println("Razlika: " + razlika);
-        int product = number1*number2;
+        int product = number1 * number2;
         System.out.println("Product: " + product);
-        int division = number1/number2;
+        int division = number1 / number2;
         System.out.println("Division: " + division);
-        int remainder = number1%number2;
+        int remainder = number1 % number2;
         System.out.println("Remainder: " + remainder);
     }
 }
