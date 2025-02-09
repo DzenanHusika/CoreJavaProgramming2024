@@ -11,10 +11,16 @@ public class BreakWithLabelDemo {
         };
         System.out.println("Unesi broj i okušaj sreću");
         int unos = new Scanner(System.in).nextInt();
-        for (int i = 0; i< numbers.length; i++){
+        VANJSKA: for (int i = 0; i< numbers.length; i++){
             int[] niz = numbers[i];
-            for (int j = 0; j<niz.length; j++){
+            for (int j = 0; j < niz.length; j++){
+               int brojIzNiza = numbers[i][j];
+               int brojIzNiza2 = niz[j];
+               if (unos == brojIzNiza){
+                   System.out.println("Pogodili ste i vaš broj se nalazi na poziciji [" + i + "." + j + "] u našem nizu");
 
+                   break;
+               }
             }
         }
     }
