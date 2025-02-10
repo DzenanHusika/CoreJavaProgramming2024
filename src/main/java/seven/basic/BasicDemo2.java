@@ -1,6 +1,6 @@
-package seven.oop.basic;
+package seven.basic;
 
-public class BasicDemo {
+public class BasicDemo2 {
     public static void main(String[] args) {
 
     }
