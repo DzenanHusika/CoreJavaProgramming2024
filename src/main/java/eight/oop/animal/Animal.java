@@ -1,6 +1,6 @@
 package eight.oop.animal;
 
-public abstract class Animal {
+public abstract class Animal implements Flyable{
     private String name;
 
     public Animal(String name){
@@ -17,10 +17,17 @@ public abstract class Animal {
 
     public abstract void playSound();
 
+    public abstract String species();
+
     @Override
     public String toString() {
         return "Animal{" +
                 "name='" + name + '\'' +
                 '}';
+    }
+
+    @Override
+    public void Fly() {
+
     }
 }

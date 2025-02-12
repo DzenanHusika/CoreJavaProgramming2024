@@ -7,6 +7,11 @@ public class Fish extends Animal{
     }
 
     @Override
+    public String species() {
+        return "Riba";
+    }
+
+    @Override
     public void playSound() {
         System.out.println("blb");
     }

@@ -7,6 +7,11 @@ public class Rabbit extends Animal{
     }
 
     @Override
+    public String species() {
+        return "Zec";
+    }
+
+    @Override
     public void playSound() {
         System.out.println("zec");
     }

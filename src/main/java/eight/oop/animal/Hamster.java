@@ -8,6 +8,11 @@ public class Hamster extends Animal{
     }
 
     @Override
+    public String species() {
+        return "Hrčak";
+    }
+
+    @Override
     public void playSound() {
         System.out.println("hrk");
     }

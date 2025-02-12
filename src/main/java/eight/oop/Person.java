@@ -1,5 +1,7 @@
 package eight.oop;
 
+import eight.oop.animal.Animal;
+
 import java.time.LocalDate;
 import java.time.Period;
 
@@ -28,11 +30,11 @@ public class Person extends Object{
     private String surname;
     private LocalDate birthDate;
     private Gender gender;
+    private Animal animal;
 
 
 
     public Person(){
-        //this("", "", LocalDate.now(), Gender.UNKNOWN);
         System.out.println("Person Constructor");
     }
 
@@ -41,7 +43,6 @@ public class Person extends Object{
         this.surname = surname;
         this.birthDate = birthDate;
         this.gender = gender;
-//        System.out.println("Sa parametrima");
     }
 
     public int getAge(){
@@ -84,6 +85,18 @@ public class Person extends Object{
 
     @Override
     public String toString() {
-        return name + " " + surname + " " + birthDate + " " + gender + " star " + getAge() + " godina";
+        String text = name + " " + surname + " " + birthDate + " " +  gender + " star " + getAge() + " godina";
+        if (animal!= null){
+            text = text + " i ima " + animal.species() + " sa imenom " + animal.getName();
+        }
+        return text;
+    }
+
+    public Animal getAnimal() {
+        return animal;
+    }
+
+    public void setAnimal(Animal animal) {
+        this.animal = animal;
     }
 }

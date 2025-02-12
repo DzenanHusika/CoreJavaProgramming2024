@@ -8,6 +8,11 @@ public class Dog extends Animal{
     }
 
     @Override
+    public String species() {
+        return "Pas";
+    }
+
+    @Override
     public void playSound() {
         System.out.println("avav");
     }
