@@ -1,9 +1,12 @@
 package eight.oop;
 
 import eight.oop.animal.Animal;
+import jdk.incubator.vector.VectorOperators;
+import org.jetbrains.annotations.NotNull;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.Objects;
 
 /*
  * Klasa može imati:
@@ -25,7 +28,7 @@ import java.time.Period;
  *  </  4.>
  *
  */
-public class Person extends Object{
+public class Person implements Comparable<Person>{
     private String name;
     private String surname;
     private LocalDate birthDate;
@@ -92,11 +95,43 @@ public class Person extends Object{
         return text;
     }
 
-    public Animal getAnimal() {
-        return animal;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return Objects.equals(name, person.name) && Objects.equals(surname, person.surname) && Objects.equals(birthDate, person.birthDate) && gender == person.gender && Objects.equals(animal, person.animal);
     }
 
-    public void setAnimal(Animal animal) {
-        this.animal = animal;
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, surname, birthDate, gender, animal);
     }
+
+
+    // int
+    // 0 -> jednaki p1 i p2
+    // 1 -> p1 veći od p2
+    // -1 -> p1 manji od p2
+    @Override
+    public int compareTo(Person comparedPerson) {
+        int birthDateComparison = this.birthDate.compareTo(comparedPerson.getBirthDate());
+        if (birthDateComparison != 0) {
+            return birthDateComparison;
+        }
+
+        int surnameComparison = this.surname.compareTo(comparedPerson.getSurname());
+        if (surnameComparison != 0) {
+            return surnameComparison;
+        }
+
+        int nameComparison = this.name.compareTo(comparedPerson.getName());
+        if (nameComparison != 0) {
+            return nameComparison;
+        }
+
+        return this.gender.compareTo(comparedPerson.getGender());
+    }
+
+
 }

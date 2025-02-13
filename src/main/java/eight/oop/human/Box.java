@@ -7,7 +7,7 @@ public class Box<F> {
     public F getField(){
         return field;
     }
-    public void setField(){
+    public void setField(F field){
         this.field = field;
     }
 }
